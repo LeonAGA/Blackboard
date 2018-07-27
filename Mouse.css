@@ -1,0 +1,441 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face{
+  font-family: "raleway";
+  src: url("raleway.woff") format("woff");
+}
+
+#group{
+  display: block;
+}
+
+#header{
+  font: normal 15px raleway;
+  text-shadow: 0px 5px 5px grey;
+  text-align: center;
+}
+
+#blocking{
+  background-color: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  display: none;
+  z-index: 1;
+}
+
+#menu{
+  margin: 20px 0px;
+  font: normal 15px raleway;
+  text-align: center;
+  text-shadow: 0px 3px 3px grey;
+  box-shadow: 0px 10px 10px grey;
+  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
+  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
+}
+
+.buttonMenu{
+	display: inline-block;
+	padding: 20px 25px;
+	margin: 15px 30px;
+	box-shadow: 0px 5px 10px grey;
+	list-style: none;
+	border-radius: 10px;
+	color: white;
+  background: #DF0101;
+}
+
+.buttonMenu:hover{
+  cursor: pointer;
+  animation-duration: 0.1s;
+  animation-name: buttonHover;
+  animation-fill-mode: forwards;
+}
+
+#question{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
+  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
+  display: none;
+  position: absolute;
+  margin: 0px 0px 0px 550px;
+  width: 300px;
+  z-index: 0;
+}
+
+#colors{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
+  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
+  display: none;
+  position: absolute;
+  border-spacing: 10px 5px;
+  margin: 0px 0px 0px 700px;
+  z-index: 0;
+}
+
+.color{
+  width: 25px;
+  height: 25px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  box-shadow: 0px 2px 2px grey;
+}
+
+.color:hover{
+  width: 25px;
+  height: 25px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  box-shadow: 0px 2px 2px grey;
+  cursor: pointer;
+  animation-duration: 0.1s;
+  animation-name: buttonHover;
+  animation-fill-mode: forwards;
+}
+
+@keyframes buttonHover{
+  from {transform: scale(1);}
+  to {transform: scale(1.1);}
+}
+
+/*/////////////////////////////////////////////////////////////////////////////
+COLORS*/
+
+.color[name = "#0000FF"]{
+background: #0000FF;
+}
+.color[name = "#01DFD7"]{
+background: #01DFD7;
+}
+.color[name = "#FFFF00"]{
+background: #FFFF00;
+}
+.color[name = "#DF0101"]{
+background: #DF0101;
+}
+.color[name = "#FE2EF7"]{
+background: #FE2EF7;
+}
+
+
+.color[name = "#0174DF"]{
+background: #0174DF;
+}
+.color[name = "#00FF40"]{
+background: #00FF40;
+}
+.color[name = "#FF8000"]{
+background: #FF8000;
+}
+.color[name = "#FA8258"]{
+background: #FA8258;
+}
+.color[name = "#642EFE"]{
+background: #642EFE;
+}
+
+
+.color[name = "#58D3F7"]{
+background: #58D3F7;
+}
+.color[name = "#298A08"]{
+background: #298A08;
+}
+.color[name = "#F5BCA9"]{
+background: #F5BCA9;
+}
+.color[name = "#F5A9F2"]{
+background: #F5A9F2;
+}
+.color[name = "#9A2EFE"]{
+background: #9A2EFE;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////
+JUMP ANIMATION*/
+
+[jump = yes]{
+  animation-name: bouncer;
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0,0.51,0.31,1.51);
+  /*Chrome*/
+  -webkit-transition: background-color .2s linear 0s;
+  /*Firefox*/
+  -moz-transition: background-color .2s linear 0s;
+  /*Opera*/
+  -o-transition: background-color .2s linear 0s;
+  /*Standard*/
+  transition: background-color .2s linear 0s;
+}
+
+@keyframes bouncer{
+  0%  {
+      transform: translate(0px, 0vh);
+      }
+  5%  {
+      box-shadow: 0px 5px 10px grey;
+      }
+  50% {
+      box-shadow: 0px 0px 10px grey;
+      transform: translate(0px, -7vh);
+      }
+  75% {
+      box-shadow: 0px 5px 10px grey;
+      }
+ 100% {
+      box-shadow: 0px 0px 10px grey;
+      transform: translate(0px, 0vh);
+      }
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////
+SHAKE ANIMATION*/
+
+#zone[shake = yes]{
+  animation-name: shaker;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+}
+
+#blackSmoke[shake = yes]{
+  animation-name: shakerSmoke;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shaker{
+  20%{
+  transform: translate(0px,-100px);
+  }
+  30%{
+  transform: translate(-50px,-100px)  rotate(-5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  35%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  40%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  45%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  50%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  55%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  60%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  65%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  70%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  80%{
+  transform: translate(0px,-100px)  rotate(0deg);
+  box-shadow: 0px 1px 10px grey;
+  }
+  100%{
+  transform: translate(0px,0px);
+  }
+}
+
+@keyframes shakerSmoke{
+  20%{
+  transform: translate(0px,-100px);
+  }
+  30%{
+  transform: translate(-50px,-100px)  rotate(-5deg);
+  background-color: rgba(0, 0, 0, 0); 
+  }
+  35%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  }
+  40%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  45%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  }
+  50%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  55%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  }
+  60%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  65%{
+  transform: translate(100px,-100px)  rotate(5deg);
+  }
+  70%{
+  transform: translate(-100px,-100px)  rotate(-5deg);
+  background-color: rgba(0, 0, 0, 1);
+  }
+  80%{
+  transform: translate(0px,-100px)  rotate(0deg);
+  background-color: rgba(0, 0, 0, 1);
+  }
+  100%{
+  transform: translate(0px,0px);
+  background-color: rgba(0, 0, 0, 1);
+  } 
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////
+DRAW ANIMATION*/
+
+[Draw = yes]{
+  animation-duration: 0.5s ;
+  animation-name: drawer;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drawer{
+  20% {
+  transform: translateY(0);
+  }
+  40% {
+  transform: translateY(-100px);
+  }
+  50%{
+  transform: translateY(30px);
+  }
+  65% {
+  transform: translateY(-15px);
+  }
+  80%{
+  transform: translateY(0);
+  }
+  100%{
+  background-color: #151515;
+  color: #151515;
+  }
+}
+
+#star{
+  
+  margin: 99px 0px 0px 330px;
+  width:1px;
+  height:1px;
+  border-bottom:35px solid white;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  position: absolute;
+
+  }
+  #star:before{
+  content:"";
+  display:block;
+  width:1px;
+  height:1px;
+  border-top:35px solid white;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  position:relative;
+  top:25px;
+  left:-10px;
+  } 
+  #star:after{
+  content:"";
+  display:block;
+  width:1px;
+  height:1px;
+  border-bottom:10px solid black /*el color de fondo*/;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  position:relative;
+  top:26px;
+  left:-15px;
+  }
+
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#section{
+  display:flex;
+}
+
+#instruction{
+  font: normal 18px raleway;
+  color: #000000;
+  text-shadow: 0px 5px 5px grey;
+  text-align: center;
+  margin: 0px 0px 0px 500px;
+  position: absolute;
+  display: none;
+}
+
+#zone{
+  box-shadow: 0px 10px 10px 5px grey;
+  background-color: black;
+	margin: 100px 0px 120px 320px;
+	border-radius: 20px;
+  z-index: 0;
+  position: relative;
+}
+
+#zone:hover{
+  cursor: url(pencil.png), pointer;
+}
+
+#zone:active{
+  cursor: url(pencil2.png), pointer;
+}
+
+#zone[eraser = yes]:hover{
+  cursor: url(eraser.png), pointer;
+}
+
+#zone[eraser = yes]:active{
+  cursor: url(eraser2.png), pointer;
+}
+
+#blackSmoke{
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 100px 0px 120px 320px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+#footer{
+  text-shadow: 0px 5px 5px grey;
+  text-align: center;
+}
