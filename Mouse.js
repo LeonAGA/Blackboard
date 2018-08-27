@@ -4,7 +4,6 @@ let zone = document.getElementById('zone');
 let paper = zone.getContext('2d');
 let position = {x:0,y:0};
 let color = '#DF0101';
-let counterPoints = 0;
 var strokes = [];
 var points = [];
 let wipeOut = true;
@@ -16,7 +15,7 @@ let erase = false;
 ////Listener for click event based on delegation technique.////
 document.body.addEventListener('click', function(e){
 e.stopPropagation();
-//If a click has been made inside the bocking area when the color menu is active//
+//If a click has been made inside the bocking area when the color menu is active.//
   if (e.target.className == 'blocking' && wipeOut){
     document.querySelector('#blocking').style.display = "none";
     document.querySelector('#colors').style.display = "none";
@@ -62,69 +61,71 @@ e.stopPropagation();
   }
 //If a click has been made inside the canvas and the eraser is disabled.//
   else if(e.target.className == 'canvas' && !erase){
-    position.x = e.layerX;
-    position.y = e.layerY;
-    DrawLine(color, position.x, position.y, position.x-1, position.y-1, paper);
+    position = positionCalculator(zone, e);
+    drawPoint(color, position.x, position.y, paper);
+    points.push(position);
   }
 //If a click has been made inside the canvas and the eraser is enabled.//  
   else if(e.target.className == 'canvas' && erase){
-    position.x = e.layerX;
-    position.y = e.layerY;
-    paper.clearRect(position.x + 2, position.y + 2, -5, -5);
+    position = positionCalculator(zone, e);
+    paper.clearRect(position.x + 3, position.y + 3, -5, -5);
   }
-});
+},false);
 
 ////Listeners waiting for the mouse be pressed, released or moved to draw or erase.////
 
 //If the mouse is pressed and onhold inside the canvas.//  
 document.querySelector('#zone').addEventListener("mousedown", function(e){
-  e.stopPropagation()
+  e.stopPropagation();
+  points.length = 0;
+  paper.beginPath();
   down = true;
-}); 
+},false); 
 
 //If the mouse is pressed, onhold and is moving inside the canvas.//  
 document.querySelector('#zone').addEventListener('mousemove', function(e){
-  e.stopPropagation() 
+  e.stopPropagation(); 
   if(down == true && !erase){
-    position.x = e.layerX;
-    position.y = e.layerY;
-    //points[counterPoints] = [color, position.x - e.movementX , position.y - e.movementY, position.x,position.y];
-    //counterPoints+= 1;
-    //DrawLine(color, position.x - e.movementX , position.y - e.movementY, position.x,position.y, paper);
-    DrawLine(color, position.x - e.movementX , position.y - e.movementY, position.x,position.y, paper);
+    position = positionCalculator(zone, e);
+    drawLine(color, position.x, position.y, paper);
+    points.push(position);
   }
     else if(down == true && erase){
-    position.x = e.layerX;
-    position.y = e.layerY;
-    paper.clearRect(position.x - e.movementX, position.y - e.movementY, -5, -5);
+    position = positionCalculator(zone, e);
+    paper.clearRect(position.x + 3, position.y + 3, -5, -5);
     }
-});
+},false);
+
+//If the mouse go out of the canvas with the button pressed.//
+document.querySelector('#zone').addEventListener("mouseout", function(e) {
+  e.stopPropagation();
+  down = false;
+  //Redraw();
+},false);
 
 //If the mouse is released inside the canvas.//  
 document.querySelector('#zone').addEventListener('mouseup', function(e){
-  e.stopPropagation()
+  e.stopPropagation();
   down = false;
-  //counterPoints = 0;
- // Redraw();
-  
-});
+  Redraw();
+},false);
 
 //Listener to  suggest the "d key" use//
 document.body.addEventListener('mouseover', function(e){
-  e.stopPropagation()
+  e.stopPropagation();
   if(e.target.getAttribute('id') == "delete"){
     document.querySelector('#instruction').style.display = 'block';
   }
   else{
     document.querySelector('#instruction').style.display = 'none';
   }
-});
+},false);
 
 ////Other listeners.////
 
-//If the "d - key" has been pressed to activate o deactivate the eraser. //  
+//If the "d - key" has been pressed to activate o deactivate the eraser.//  
 document.body.addEventListener('keydown', function(e){
-  e.stopPropagation()
+  e.stopPropagation();
   if(e.keyCode == 68 && !erase){
   erase = true;
   document.querySelector('#zone').setAttribute('eraser','yes');
@@ -132,7 +133,7 @@ document.body.addEventListener('keydown', function(e){
   erase = false;
   document.querySelector('#zone').removeAttribute('eraser');
   }
-});
+},false);
  
 // FUNCTIONS========================================================================
 
@@ -150,8 +151,8 @@ document.querySelector('#blackSmoke').setAttribute("shake","yes");
 document.querySelector('#blackSmoke').style.display = 'block';
 document.querySelector('#zone').addEventListener("animationend", function(){
   paper.clearRect(0, 0, zone.width, zone.height);
-  strokes.length = 0;
   points.length = 0;
+  strokes.length = 0;
   document.querySelector('#blackSmoke').style.display = 'none';
   document.querySelector('#blackSmoke').removeAttribute("shake");
   document.querySelector('#zone').removeAttribute("shake");
@@ -165,20 +166,38 @@ document.querySelector('#zone').addEventListener("animationend", function(){
 },false);
 }
 
-//// Functions that draw in the canvas. ////
+//// Functions that draw in the canvas.////
 
-function DrawLine(color, xinitial, yinitial, xfinal, yfinal, canvas){
+function positionCalculator(canvas , e){
+let clientRect = canvas.getBoundingClientRect();
+  return{
+  x: Math.round(e.clientX - clientRect.left),
+  y: Math.round(e.clientY - clientRect.top),
+  color: color
+  } 
+}
+
+function drawPoint(color, x, y, canvas){
+  canvas.lineJoin = "round";
+  canvas.beginPath();
+  canvas.strokeStyle = color;
+  canvas.lineWidth = 3;
+  canvas.moveTo(x, y);
+  canvas.lineTo(x - 1, y - 1);
+  canvas.stroke();
+  canvas.closePath();
+}
+
+function drawLine(color, x, y, canvas){
 canvas.lineJoin = "round";
-canvas.beginPath();
 canvas.strokeStyle = color;
 canvas.lineWidth = 3;
-canvas.moveTo(xinitial,yinitial);
-canvas.lineTo(xfinal,yfinal);
+canvas.lineTo(x,y);
 canvas.stroke();
-canvas.closePath();
 }
 
 function Redraw(){
+down = false;
 paper.clearRect(0, 0, zone.width, zone.height);
 reduceNumberOfPoints(5, points);
   for(var i = 0; i < strokes.length; i++){
@@ -188,7 +207,6 @@ reduceNumberOfPoints(5, points);
 
 function reduceNumberOfPoints(n, array){
 var newArray = [];
-newArray[counterPoints] = [];
 newArray[0] = array[0];
   for(var i = 0; i < array.length; i++){
     if(i % n == 0){
@@ -201,38 +219,23 @@ strokes.push(newArray);
 
 function upgradeStroke(ry){
   if(ry.length > 1){
-    console.log(ry);
-    var lastArray = ry.length - 1;
-    var lastPoint = ry[lastArray].length - 1;
+    var lastPoint = ry.length - 1;
     paper.beginPath();
-    paper.lineWidth = 3;
-    paper.moveTo(ry[0][1], ry[0][2]);
-      for(i = 0; i < ry.lenght; i++){
-        for(j =0; j < ry[i].lenght; i++){
-          
-          switch(j){
-           case 0:
-            paper.strokeStyle = ry[i][j];
-           break;
-           case 1:
-            var cp = calculateControlPoint(ry,i,i+1); 
-           break; 
-           default:
-          }
-        }
+    paper.moveTo(ry[0].x, ry[0].y);
+      for(i = 1; i < ry.length - 2; i++){
+        paper.strokeStyle = ry[i].color;
+        var cp = calculateControlPoint(ry, i, i + 1);
         paper.quadraticCurveTo(ry[i].x, ry[i].y, cp.x, cp.y);
       }
-  }
-    paper.quadraticCurveTo(ry[lastPoint - 1], ry[lastPoint -1], ry[lastPoint], ry[lastPoint]); // punto final alv
+      paper.quadraticCurveTo(ry[lastPoint - 1].x, ry[lastPoint - 1].y, ry[lastPoint].x, ry[lastPoint].y); 
     paper.stroke();
-    paper.closePath();
-  }
-
+  } 
+}
 
 function calculateControlPoint(ry,a,b){
 var cp = {}
-cp.x = (ry[a][1] + ry[b][1]) / 2;
-cp.y = (ry[a][2] + ry[b][2]) / 2;
+cp.x = (ry[a].x + ry[b].x) / 2;
+cp.y = (ry[a].y + ry[b].y) / 2;
 return cp;
 }
 
