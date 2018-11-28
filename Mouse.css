@@ -12,38 +12,41 @@
   display: block;
 }
 
-#header{
-  font: normal 15px raleway;
-  text-shadow: 0px 5px 5px grey;
-  text-align: center;
+h1{
+margin: 0px 0px 0px 610px;
+font: bold 18px raleway;
+text-shadow: 0px 5px 5px grey;
 }
 
 #blocking{
-  background-color: rgb(0, 0, 0, 0.5);
-  position: absolute;
-  width: 100%;
-  height: 200%;
   display: none;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 3;
 }
 
 #menu{
-  margin: 20px 0px;
-  font: normal 15px raleway;
-  text-align: center;
-  text-shadow: 0px 3px 3px grey;
+  margin: 5px 0px 0px 0px;
   box-shadow: 0px 10px 10px grey;
-  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#FFFFFF, #C0C0C0); /* Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
-  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
+  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */ 
+}
+
+#buttons{
+margin: 5px 0px 0px 530px;
 }
 
 .buttonMenu{
-	display: inline-block;
-	padding: 20px 25px;
-	margin: 15px 30px;
-	box-shadow: 0px 5px 10px grey;
+  display: inline-block;
+  margin: 10px 30px;
+	padding: 15px 20px;
+  font: normal 12px raleway;
+  text-shadow: 0px 3px 3px grey;
+  box-shadow: 0px 5px 10px grey;
 	list-style: none;
 	border-radius: 10px;
 	color: white;
@@ -58,35 +61,44 @@
 }
 
 #stroke{
-width:90px;
+  width: 72px;
+  text-align: center;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
 }
 
 #question{
+  display: none;
+  width: 241px;
+  text-align: center;
+  margin-left: 440px;
+  position: absolute;
   border-radius: 10px;
+  font: bold 12px raleway;
+  text-shadow: 0px 3px 3px grey;
   box-shadow: 0px 0px 10px black;
-  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#FFFFFF, #C0C0C0); /* Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
   background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
-  display: none;
-  position: absolute;
-  margin: 0px 0px 0px 550px;
-  width: 300px;
-  z-index: 0;
+  z-index: 2;
 }
 
 #colors{
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px black;
-  background: -webkit-linear-gradient(#FFFFFF , #C0C0C0); /* Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
-  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
   display: none;
   position: absolute;
   border-spacing: 10px 5px;
-  margin: 0px 0px 0px 700px;
-  z-index: 0;
+  margin-left: 638px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  background: -webkit-linear-gradient(#FFFFFF, #C0C0C0); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFFFFF, #C0C0C0); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFFFFF, #C0C0C0); /* Firefox 3.6 to 15 */
+  background: linear-gradient(#FFFFFF, #C0C0C0); /* Standard syntax */
+  z-index: 2;
 }
 
 .color{
@@ -100,346 +112,502 @@ width:90px;
 }
 
 .color:hover{
-  width: 25px;
-  height: 25px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  border: 3px solid #000000;
-  box-shadow: 0px 2px 2px grey;
   cursor: pointer;
   animation-duration: 0.1s;
   animation-name: buttonHover;
   animation-fill-mode: forwards;
 }
 
-@keyframes buttonHover{
-  from {transform: scale(1);}
-  to {transform: scale(1.1);}
-}
-
 /*/////////////////////////////////////////////////////////////////////////////
 COLORS*/
 
 .color[name = "#0000FF"]{
-background: #0000FF;
+  background: #0000FF;
 }
 .color[name = "#01DFD7"]{
-background: #01DFD7;
+  background: #01DFD7;
 }
 .color[name = "#FFFF00"]{
-background: #FFFF00;
+  background: #FFFF00;
 }
 .color[name = "#DF0101"]{
-background: #DF0101;
+  background: #DF0101;
 }
 .color[name = "#FE2EF7"]{
-background: #FE2EF7;
+  background: #FE2EF7;
 }
-
-
+  
+  
 .color[name = "#0174DF"]{
-background: #0174DF;
+  background: #0174DF;
 }
 .color[name = "#00FF40"]{
-background: #00FF40;
+  background: #00FF40;
 }
 .color[name = "#FF8000"]{
-background: #FF8000;
+  background: #FF8000;
 }
 .color[name = "#FA8258"]{
-background: #FA8258;
+  background: #FA8258;
 }
 .color[name = "#642EFE"]{
-background: #642EFE;
+  background: #642EFE;
 }
-
-
+  
+  
 .color[name = "#58D3F7"]{
-background: #58D3F7;
+  background: #58D3F7;
 }
 .color[name = "#298A08"]{
-background: #298A08;
+  background: #298A08;
 }
 .color[name = "#F5BCA9"]{
-background: #F5BCA9;
+  background: #F5BCA9;
 }
 .color[name = "#F5A9F2"]{
-background: #F5A9F2;
+  background: #F5A9F2;
 }
 .color[name = "#9A2EFE"]{
-background: #9A2EFE;
+  background: #9A2EFE;
+}
+  
+/*////////////////////////////////////////////////////////////////////////////*/
+  
+#star{
+  display: none;
+  background: red;
+  width: 6px; /*6 for avoid pixel effect*/
+  height: 6px; /* 6 for avoid pixel effect*/
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  box-shadow:
+
+  /*Edges*/
+  5px 0px 0 0 red,10px 0px 0 0 red,15px 0px 0 0 red,20px 0px 0 0 red,25px 0px 0 0 red,
+  25px -5px 0 0 red,
+  30px -10px 0 0 red,30px -15px 0 0 red,
+  35px -20px 0 0 red,37.5px -25px 0 0 red,
+  40px -20px 0 0 red,45px -15px 0 0 red,
+  45px -10px 0 0 red,
+  50px -5px 0 0 red,50px 0px 0 0 red,55px 0px 0 0 red,60px 0px 0 0 red,65px 0px 0 0 red,70px 0px 0 0 red,
+  75px 0px 0 0 red,
+  75px 5px 0 0 red,
+  70px 10px 0 0 red,
+  65px 15px 0 0 red,
+  60px 20px 0 0 red,60px 25px 0 0 red,
+  65px 30px 0 0 red,65px 35px 0 0 red,
+  70px 40px 0 0 red,70px 45px 0 0 red,
+  75px 50px 0 0 red,
+  75px 55px 0 0 red,70px 55px 0 0 red,65px 55px 0 0 red,
+  60px 50px 0 0 red,55px 50px 0 0 red,
+  50px 45px 0 0 red,45px 45px 0 0 red,
+  40px 40px 0 0 red,35px 40px 0 0 red,
+  30px 45px 0 0 red,25px 45px 0 0 red,
+  20px 50px 0 0 red,15px 50px 0 0 red,
+  10px 55px 0 0 red,5px 55px 0 0 red,0px 55px 0 0 red,
+  0px 50px 0 0 red,
+  5px 45px 0 0 red,5px 40px 0 0 red,
+  10px 35px 0 0 red,10px 30px 0 0 red,
+  15px 25px 0 0 red,15px 20px 0 0 red,
+  10px 15px 0 0 red,
+  5px 10px 0 0 red,
+  0px 5px 0 0 red,
+
+/*filling*/
+  35px -15px 0 0 red,40px -15px 0 0 red,
+  35px -10px 0 0 red,40px -10px 0 0 red,
+  30px -5px 0 0 red,35px -5px 0 0 red,40px -5px 0 0 red,45px -5px 0 0 red,
+  30px 0px 0 0 red,35px 0px 0 0 red,40px 0px 0 0 red,45px 0px 0 0 red,
+  5px 5px 0 0 red,10px 5px 0 0 red,15px 5px 0 0 red,20px 5px 0 0 red,25px 5px 0 0 red,30px 5px 0 0 red,35px 5px 0 0 red
+  ,40px 5px 0 0 red,45px 5px 0 0 red,50px 5px 0 0 red,55px 5px 0 0 red,60px 5px 0 0 red,65px 5px 0 0 red,70px 5px 0 0 red,
+  10px 10px 0 0 red,15px 10px 0 0 red,20px 10px 0 0 red,25px 10px 0 0 red,30px 10px 0 0 red,35px 10px 0 0 red,40px 10px 0 0 red
+  ,45px 10px 0 0 red,50px 10px 0 0 red,55px 10px 0 0 red,60px 10px 0 0 red,65px 10px 0 0 red,
+  15px 15px 0 0 red,20px 15px 0 0 red,25px 15px 0 0 red,30px 15px 0 0 red,35px 15px 0 0 red,40px 15px 0 0 red,45px 15px 0 0 red
+  ,50px 15px 0 0 red,55px 15px 0 0 red,60px 15px 0 0 red,
+  20px 20px 0 0 red,25px 20px 0 0 red,30px 20px 0 0 red,35px 20px 0 0 red,40px 20px 0 0 red,45px 20px 0 0 red
+  ,50px 20px 0 0 red,55px 20px 0 0 red,
+  20px 25px 0 0 red,25px 25px 0 0 red,30px 25px 0 0 red,35px 25px 0 0 red,40px 25px 0 0 red,45px 25px 0 0 red
+  ,50px 25px 0 0 red,55px 25px 0 0 red,
+  15px 30px 0 0 red,20px 30px 0 0 red,25px 30px 0 0 red,30px 30px 0 0 red,35px 30px 0 0 red,40px 30px 0 0 red
+  ,45px 30px 0 0 red,50px 30px 0 0 red,55px 30px 0 0 red,60px 30px 0 0 red,
+  15px 35px 0 0 red,20px 35px 0 0 red,25px 35px 0 0 red,30px 35px 0 0 red,35px 35px 0 0 red,40px 35px 0 0 red
+  ,45px 35px 0 0 red,50px 35px 0 0 red,55px 35px 0 0 red,60px 35px 0 0 red,
+  10px 40px 0 0 red,15px 40px 0 0 red,20px 40px 0 0 red,25px 40px 0 0 red,30px 40px 0 0 red,45px 40px 0 0 red
+  ,50px 40px 0 0 red,55px 40px 0 0 red,60px 40px 0 0 red,65px 40px 0 0 red,
+  10px 45px 0 0 red,15px 45px 0 0 red,20px 45px 0 0 red,50px 45px 0 0 red,55px 45px 0 0 red,60px 45px 0 0 red
+  ,65px 45px 0 0 red,
+  5px 50px 0 0 red,10px 50px 0 0 red,65px 50px 0 0 red,70px 50px 0 0 red;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////
+BUTTON HOVER ANIMATION.*/
+
+@keyframes buttonHover{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 
 /*/////////////////////////////////////////////////////////////////////////////
-JUMP ANIMATION*/
+BUTTON HOVER ANIMATION FOR DELETE.*/
+
+[glow = yes]{
+  animation-name: buttonHoverDelete;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes buttonHoverDelete{
+  40%{
+    text-shadow: 0px 5px 3px red;
+  }
+  80%{
+    text-shadow: 0px 5px 5px grey;
+  }
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////
+JUMP ANIMATION.*/
 
 [jump = yes]{
   animation-name: bouncer;
   animation-duration: 0.3s;
   animation-timing-function: cubic-bezier(0,0.51,0.31,1.51);
-  /*Chrome*/
-  -webkit-transition: background-color .2s linear 0s;
-  /*Firefox*/
-  -moz-transition: background-color .2s linear 0s;
-  /*Opera*/
-  -o-transition: background-color .2s linear 0s;
-  /*Standard*/
-  transition: background-color .2s linear 0s;
+  -webkit-transition: background-color .2s linear 0s; /*Chrome*/
+  -moz-transition: background-color .2s linear 0s; /*Firefox*/
+  -o-transition: background-color .2s linear 0s; /*Opera*/
+  transition: background-color .2s linear 0s; /*Standard*/
 }
 
 @keyframes bouncer{
-  0%  {
-      transform: translate(0px, 0vh);
-      }
-  5%  {
-      box-shadow: 0px 5px 10px grey;
-      }
-  50% {
-      box-shadow: 0px 0px 10px grey;
-      transform: translate(0px, -7vh);
-      }
-  75% {
-      box-shadow: 0px 5px 10px grey;
-      }
- 100% {
-      box-shadow: 0px 0px 10px grey;
-      transform: translate(0px, 0vh);
-      }
+  0%{
+    transform: translate(0px, 0px);
+  }
+  5%{
+    box-shadow: 0px 5px 10px grey;
+  }
+  50%{
+    box-shadow: 0px 0px 10px grey;
+    transform: translate(0px, -45px);
+  }
+  75%{
+    box-shadow: 0px 5px 10px grey;
+  }
+ 100%{
+  box-shadow: 0px 0px 10px grey;
+  transform: translate(0px, 0px);
+ }
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 
 /*/////////////////////////////////////////////////////////////////////////////
-SHAKE ANIMATION*/
+SHAKE ANIMATION.*/
+
+#backGround[shake = yes]{
+  animation-name: shakerBackGround;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0,0.51,0.4,1.51);
+}
 
 #zone[shake = yes]{
-  animation-name: shaker;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
+  animation-name: shakerZone;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0,0.51,0.4,1.51);
 }
 
-#blackSmoke[shake = yes]{
-  animation-name: shakerSmoke;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
+#zoneAux[shake = yes]{
+  animation-name: shakerAuxZone;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0,0.51,0.4,1.51);
   animation-fill-mode: forwards;
 }
 
-@keyframes shaker{
+@keyframes shakerBackGround{
   20%{
-  transform: translate(0px,-100px);
+    transform: translate(0px,-100px);
   }
   30%{
-  transform: translate(-50px,-100px)  rotate(-5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(-50px,-100px)  rotate(-5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   35%{
-  transform: translate(100px,-100px)  rotate(5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(100px,-100px)  rotate(5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   40%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   45%{
-  transform: translate(100px,-100px)  rotate(5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(100px,-100px)  rotate(5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   50%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   55%{
-  transform: translate(100px,-100px)  rotate(5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(100px,-100px)  rotate(5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   60%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   65%{
-  transform: translate(100px,-100px)  rotate(5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(100px,-100px)  rotate(5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   70%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    box-shadow: 0px 1px 10px grey;
   }
   80%{
-  transform: translate(0px,-100px)  rotate(0deg);
-  box-shadow: 0px 1px 10px grey;
+    transform: translate(0px,-100px)  rotate(0deg);
+    box-shadow: 0px 1px 10px grey;
   }
   100%{
-  transform: translate(0px,0px);
+    transform: translate(0px,0px);
   }
 }
 
-@keyframes shakerSmoke{
+@keyframes shakerZone{
   20%{
-  transform: translate(0px,-100px);
+    transform: translate(0px,-100px);
   }
   30%{
-  transform: translate(-50px,-100px)  rotate(-5deg);
-  background-color: rgba(0, 0, 0, 0); 
+    transform: translate(-50px,-100px)  rotate(-5deg);
+    background-color: rgba(0, 0, 0, 0); 
   }
   35%{
-  transform: translate(100px,-100px)  rotate(5deg);
+    transform: translate(100px,-100px)  rotate(5deg);
   }
   40%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
+    transform: translate(-100px,-100px)  rotate(-5deg);
   }
   45%{
-  transform: translate(100px,-100px)  rotate(5deg);
+    transform: translate(100px,-100px)  rotate(5deg);
   }
   50%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
+    transform: translate(-100px,-100px)  rotate(-5deg);
   }
   55%{
-  transform: translate(100px,-100px)  rotate(5deg);
+    transform: translate(100px,-100px)  rotate(5deg);
   }
   60%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
+    transform: translate(-100px,-100px)  rotate(-5deg);
   }
   65%{
-  transform: translate(100px,-100px)  rotate(5deg);
+    transform: translate(100px,-100px)  rotate(5deg);
   }
   70%{
-  transform: translate(-100px,-100px)  rotate(-5deg);
-  background-color: rgba(0, 0, 0, 1);
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    background-color: rgba(0, 0, 0, 1);
   }
   80%{
-  transform: translate(0px,-100px)  rotate(0deg);
-  background-color: rgba(0, 0, 0, 1);
+    transform: translate(0px,-100px)  rotate(0deg);
+    background-color: rgba(0, 0, 0, 1);
   }
   100%{
-  transform: translate(0px,0px);
-  background-color: rgba(0, 0, 0, 1);
+    transform: translate(0px,0px);
+    background-color: rgba(0, 0, 0, 1);
+  } 
+}
+
+@keyframes shakerAuxZone{
+  20%{
+    transform: translate(0px,-100px);
+  }
+  30%{
+    transform: translate(-50px,-100px)  rotate(-5deg);
+    background-color: rgba(0, 0, 0, 0); 
+  }
+  35%{
+    transform: translate(100px,-100px)  rotate(5deg);
+  }
+  40%{
+    transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  45%{
+    transform: translate(100px,-100px)  rotate(5deg);
+  }
+  50%{
+    transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  55%{
+    transform: translate(100px,-100px)  rotate(5deg);
+  }
+  60%{
+    transform: translate(-100px,-100px)  rotate(-5deg);
+  }
+  65%{
+    transform: translate(100px,-100px)  rotate(5deg);
+  }
+  70%{
+    transform: translate(-100px,-100px)  rotate(-5deg);
+    background-color: rgba(0, 0, 0, 1);
+  }
+  80%{
+    transform: translate(0px,-100px)  rotate(0deg);
+    background-color: rgba(0, 0, 0, 1);
+  }
+  100%{
+    transform: translate(0px,0px);
+    background-color: rgba(0, 0, 0, 1);
   } 
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
 
 /*/////////////////////////////////////////////////////////////////////////////
-DRAW ANIMATION*/
+DRAW ANIMATION.*/
 
-[Draw = yes]{
-  animation-duration: 0.5s ;
-  animation-name: drawer;
+[draw = "1"]{
+  animation-duration: .3s ;
+  animation-name: drawerOne;
   animation-fill-mode: forwards;
 }
 
-@keyframes drawer{
-  20% {
-  transform: translateY(0);
-  }
-  40% {
-  transform: translateY(-100px);
-  }
-  50%{
-  transform: translateY(30px);
-  }
-  65% {
-  transform: translateY(-15px);
+[draw = "2"]{
+  animation-duration: .3s ;
+  animation-name: drawerTwo;
+  animation-fill-mode: forwards;
+}
+
+[draw = "3"]{
+  animation-duration: .3s ;
+  animation-name: drawerThree;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drawerOne{
+  0% {
+    transform: translate(34px, 15px)
+    rotate(30deg)
+    scale(0, 0);
   }
   80%{
-  transform: translateY(0);
+    transform: translate(-35px, -35px)
+    rotate(-10deg)
+    scale(.5, .5);
+    opacity: 1;
   }
   100%{
-  background-color: #151515;
-  color: #151515;
+    transform: translate(-35px, -35px)
+    rotate(-10deg)
+    scale(.5, .5);
+    opacity: 0;
   }
 }
 
-#star{
-  
-  margin: 99px 0px 0px 330px;
-  width:1px;
-  height:1px;
-  border-bottom:35px solid white;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  position: absolute;
+@keyframes drawerTwo{
+  0% {
+    transform: translate(34px, 15px)
+    rotate(30deg)
+    scale(0, 0);
+  }
+  80%{
+    transform: translate(-45px, -10px)
+    rotate(-20deg)
+    scale(.3, .3);
+    opacity: 1;
+  }
+  100%{
+    transform: translate(-45px, -10px)
+    rotate(-20deg)
+    scale(.3, .3);
+    opacity: 0;
+  }
+}
 
+@keyframes drawerThree{
+  0% {
+    transform: translate(34px, 15px)
+    rotate(30deg)
+    scale(0, 0);
+  }  
+  80%{
+    transform: translate(-45px, 35px)
+    rotate(-30deg)
+    scale(.4, .4);
+    opacity: 1;
   }
-  #star:before{
-  content:"";
-  display:block;
-  width:1px;
-  height:1px;
-  border-top:35px solid white;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  position:relative;
-  top:25px;
-  left:-10px;
-  } 
-  #star:after{
-  content:"";
-  display:block;
-  width:1px;
-  height:1px;
-  border-bottom:10px solid black /*el color de fondo*/;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  position:relative;
-  top:26px;
-  left:-15px;
+  100%{
+    transform: translate(-45px, 35px)
+    rotate(-30deg)
+    scale(.4, .4);
+    opacity: 0;
   }
+}
 
 /*////////////////////////////////////////////////////////////////////////////*/
 
 #section{
-  display:flex;
+  display: flex;
 }
 
 #instruction{
-  font: normal 18px raleway;
+  display: none;
+  position: absolute;
+  margin: 10px 0px 0px 475px;
+  font: bold 14px raleway;
   color: #000000;
   text-shadow: 0px 5px 5px grey;
-  text-align: center;
-  margin: 0px 0px 0px 500px;
-  position: absolute;
-  display: none;
+}
+
+#backGround{
+  position: relative;
+  box-shadow: 0px 10px 10px 5px grey;
+  background-color: black;
+	margin: 30px 0px 0px 370px;
+	border-radius: 20px;
+  z-index: 0;
 }
 
 #zone{
-  box-shadow: 0px 10px 10px 5px grey;
-  background-color: black;
-	margin: 100px 0px 120px 320px;
-	border-radius: 20px;
-  z-index: 0;
-  position: relative;
-}
-
-#zone:hover{
-  cursor: url(pencil.png), pointer;
-}
-
-#zone:active{
-  cursor: url(pencil2.png), pointer;
-}
-
-#zone[eraser = yes]:hover{
-  cursor: url(eraser.png), pointer;
-}
-
-#zone[eraser = yes]:active{
-  cursor: url(eraser2.png), pointer;
-}
-
-#blackSmoke{
-  display: none;
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
-  margin: 100px 0px 120px 320px;
+  margin: 30px 0px 0px 370px;
   border-radius: 20px;
   z-index: 1;
 }
 
+#zoneAux{
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 30px 0px 0px 370px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.canvas:hover{
+  cursor: url(pencil.png), pointer;
+}
+
+.canvas:active{
+  cursor: url(pencil2.png), pointer;
+}
+
+.canvas[eraser = yes]:hover{
+  cursor: url(eraser.png), grab;
+}
+
+.canvas[eraser = yes]:active{
+  cursor: url(eraser2.png), grabbing;
+}
+
 #footer{
+  margin: 20px 0px 0px 700px;
+  font: bold 14px raleway;
   text-shadow: 0px 5px 5px grey;
-  text-align: center;
 }

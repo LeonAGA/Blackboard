@@ -1,11 +1,12 @@
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Draw With Mouse</title>
-		<meta charset="UTF-8">
-		<meta name = "description" content ="drawing">
-		<meta name = "keywords" content = "mouse,draw,click">
-		<link rel ="Stylesheet" href="Mouse.css">
-	</head>
+<head>
+	<title>Draw With Mouse</title>
+	<meta charset="UTF-8">
+	<meta name = "description" content ="drawing">
+	<meta name = "keywords" content = "mouse,draw,click">
+	<link rel ="Stylesheet" href="Mouse.css">
+</head>
 <body>
 	<div id ="group">
 			<header id ="header">
@@ -13,7 +14,7 @@
 				<h1> Draw with mouse inside the blackboard</h1>
 			</header>
 				<nav id ="menu">
-				 	<ul>
+				 	<ul id ="buttons">
 						<li  class = "buttonMenu" id ="delete">Clean</li>
 						<li  class = "buttonMenu" id ="change">Color Swift</li>
 						<li  class = "buttonMenu" id ="stroke">Paint-mode</li>
@@ -48,9 +49,10 @@
 				 	</table>
 		  	</nav>
 		 <section id = "section">
-			    <span class = 'instruction' id = 'instruction'>- If you want to delete some areas, press "d" inside the blackboard to use the eraser instead. -</span>
-				<canvas class = "canvas" id = "zone" height = "800px" width = "800px"></canvas>
-				<canvas class = "canvas" id = "blackSmoke" height = "800px" width = "800px"></canvas>
+				<span class = 'instruction' id = 'instruction'>-If you want to delete some areas, press "d" inside the blackboard to use the eraser instead.-</span>
+				<canvas id = "backGround" height = "600px" width = "800px"></canvas>
+				<canvas class = "canvas" id = "zone" height = "600px" width = "800px"></canvas>
+				<canvas class = "canvas" id = "zoneAux" height = "600px" width = "800px"></canvas>
 				<div id = "star"></div>
  		 </section>
 		 <aside id = "aside"></aside>
