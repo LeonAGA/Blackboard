@@ -81,7 +81,7 @@ e.stopPropagation();
   }
 //If a click has been made inside a canvas and the eraser is disabled.//
   else if(e.target.id == 'zone' && !erase){
-    pdosition = positionCalculator(zone, e);
+    position = positionCalculator(zone, e);
     drawPoint(color, position.x, position.y, paper);
   } else if(e.target.id == 'zoneAux' && !erase){
     position = positionCalculator(zoneAux, e);
@@ -164,7 +164,7 @@ document.querySelectorAll('.canvas').forEach(function(canvas){
   },false);
 });
 
-//Listener to  suggest the "d key" use//
+//Listener to suggest the "d key" use//
 document.body.addEventListener('mouseover', function(e){
   e.stopPropagation();
   if(e.target.getAttribute('id') == "delete"){
