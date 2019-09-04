@@ -26,7 +26,7 @@
 
 ## See it online
 
-- [`netlify`](https://blackboard.netlify.com)
+- [`netlify`](https://blackboardpure.netlify.com)
 - [`codepen`](https://codepen.io/LeonAGA/pen/eyWpMV)
 
 ## Links to other proyects
